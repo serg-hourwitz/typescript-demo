@@ -6,6 +6,7 @@ import Button from './components/Button/Button';
 import Banner from './components/Banner/Banner';
 import Blog from './components/Blog/Blog';
 import News from './components/News/News';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -36,6 +37,7 @@ function App() {
       <Banner />
       <Blog />
       <News />
+      <Footer />
     </>
   );
 }
