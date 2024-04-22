@@ -1,0 +1,38 @@
+.header {
+  width: 100%;
+  background-color: var(--c-iron);
+  color: var(--c-black);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.background {
+  background-color: var(--c-white);
+  border: 1px solid var(--c-black);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.block {
+  display: flex;
+  gap: 20px;
+}
+
+.wrapper {
+  border: 1px solid var(--c-black);
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+
+.small {
+  padding: 10px;
+}

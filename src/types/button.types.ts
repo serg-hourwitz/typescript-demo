@@ -3,4 +3,3 @@ export enum EButton {
   RESET = 'reset',
   SUBMIT = 'submit',
 }
-

@@ -1,0 +1,10 @@
+.main {
+  margin-bottom: 20px;
+  background-color: var(--c-iron);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--c-white);
+}

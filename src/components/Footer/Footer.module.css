@@ -1,0 +1,16 @@
+.footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: var(--c-iron);
+  margin-bottom: 100px;
+}
+
+.block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img {
+  width: 15%;
+}

@@ -1,0 +1,17 @@
+.list {
+  list-style-type: none;
+  font-weight: bold;
+}
+
+.item {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+h4 {
+  text-decoration: underline;
+  margin: 10px;
+}

@@ -1,0 +1,35 @@
+.news {
+  padding-top: 20px;
+  padding-left: 25px;
+  padding-bottom: 25px;
+  max-width: 300px;
+  background-color: var(--c-iron);
+  text-align: center;
+}
+
+.title {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  background-color: var(--c-periwinkle);
+}
+
+.block {
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  margin-bottom: 10px;
+}

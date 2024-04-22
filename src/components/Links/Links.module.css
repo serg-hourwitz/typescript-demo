@@ -1,0 +1,30 @@
+.links {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--c-eggshell);
+  border-radius: 10px;
+}
+
+.block {
+  padding: 10px 20px;
+}
+
+h4 {
+  margin-bottom: 30px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.item a {
+  color: var(--c-black);
+}
+
+.item a:hover {
+  color: var(--c-cosmos);
+}
+

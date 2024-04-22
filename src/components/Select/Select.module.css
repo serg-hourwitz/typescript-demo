@@ -1,0 +1,8 @@
+.select {
+  height: 40px;
+  border: 1px solid var(--c-black);
+  outline: none;
+  padding-left: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,18 @@
+.list {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+}
+
+.item {
+  padding: 5px;
+  background-color: var(--c-eggshell);
+}
+
+a{
+  transition: ease-in-out .5s;
+}
+
+a:hover {
+  color: var(--c-cosmos);
+}

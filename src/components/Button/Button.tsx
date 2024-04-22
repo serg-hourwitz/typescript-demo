@@ -1,4 +1,4 @@
-import { EButton } from '../types/button.types';
+import { EButton } from '../../types/button.types';
 import styles from './Button.module.css';
 import cn from 'classnames';
 
@@ -7,7 +7,7 @@ import React from 'react';
 // * Types local
 
 type TProps = {
-  disabled: boolean;
+  disabled?: boolean;
   color: EColor;
   text: string;
   type: EButton;

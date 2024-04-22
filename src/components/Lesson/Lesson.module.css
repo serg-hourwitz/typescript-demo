@@ -1,0 +1,9 @@
+.text {
+  color: var(--c-red);
+  text-decoration: underline;
+}
+
+.icon {
+  font-size: 40px;
+  color: var(--c-red);
+}
