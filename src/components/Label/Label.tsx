@@ -1,6 +1,13 @@
 import Option from "../Option/Option";
+import React from "react";
 
-const Label = ({ value, onChange, title }) => {
+type TLabelProps = {
+  value: string;
+  title: string;
+  onChange: (event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => void;
+};
+
+const Label: React.FC<TLabelProps> = ({ value, onChange, title }) => {
   return (
     <div>
       <label>

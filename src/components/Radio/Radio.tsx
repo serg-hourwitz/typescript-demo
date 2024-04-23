@@ -1,7 +1,17 @@
-import styles from './Radio.module.css'
+import styles from './Radio.module.css';
+import React, { ChangeEvent } from 'react';
 
 
-const Radio = ({
+type TProps = {
+  title: string;
+  name: string;
+  value: string;
+  onChange: (e: ChangeEvent<any>) => void;
+  onBlur: (e: ChangeEvent<any>) => void;
+  defaultChecked: boolean;
+};
+
+const Radio: React.FC<TProps> = ({
   title,
   name,
   value,
@@ -15,7 +25,7 @@ const Radio = ({
         {title && <div className={styles.title}>{title}</div>}
         <input
           className={styles.input}
-          type='radio'
+          type="radio"
           name={name}
           onChange={onChange}
           onBlur={onBlur}

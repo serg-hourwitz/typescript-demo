@@ -8,8 +8,25 @@ import Label from '../Label/Label';
 // * Styles
 import styles from './Converter.module.css';
 
+//  * Local types
+interface CurrencyRate {
+  cc: string;
+  rate: number;
+}
+
+interface ConverterState {
+  amount: number;
+  fromCurrency: string;
+  toCurrency: string;
+  exchangeRate: number | null;
+  convertedAmount: string | null;
+  loading: boolean;
+  error: string;
+}
+
+
 // * Local
-const DEFAULT_STATE = {
+const DEFAULT_STATE: ConverterState = {
   amount: 1,
   fromCurrency: 'USD',
   toCurrency: 'EUR',
@@ -28,15 +45,17 @@ const Converter = () => {
     fetchExchangeRate(state.fromCurrency, state.toCurrency);
   }, [state.fromCurrency, state.toCurrency]);
 
-  const fetchExchangeRate = useCallback((fromCurrency, toCurrency) => {
+  const fetchExchangeRate = useCallback((fromCurrency: string, toCurrency: string) => {
     axios
-      .get('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json')
+      .get<CurrencyRate[]>(
+        'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json'
+      )
       .then(({ data }) => {
         const fromCurrencyRate = data.find(
-          (currency) => currency.cc === fromCurrency
+          (currency: any) => currency.cc === fromCurrency
         );
         const toCurrencyRate = data.find(
-          (currency) => currency.cc === toCurrency
+          (currency: any) => currency.cc === toCurrency
         );
 
         if (fromCurrencyRate && toCurrencyRate) {
@@ -69,16 +88,17 @@ const Converter = () => {
   }, [fetchExchangeRate, state.fromCurrency, state.toCurrency]);
 
   useEffect(() => {
-    const { amount, exchangeRate } = state;
-    if (exchangeRate !== null && amount > 0) {
-      setState((prevState) => ({
-        ...prevState,
-        convertedAmount: (amount * exchangeRate).toFixed(2),
-      }));
-    }
-  }, [state.amount, state.exchangeRate]);
+  const { amount, exchangeRate } = state;
+  if (exchangeRate !== null && amount > 0) {
+    setState((prevState) => ({
+      ...prevState,
+      convertedAmount: (amount * exchangeRate).toFixed(2),
+    }));
+  }
+}, [state.amount, state.exchangeRate]);
 
-  const handleAmountChange = useCallback((e) => {
+
+  const handleAmountChange = useCallback((e: { target: { value: any; }; }) => {
     const inputValue = Number(e.target.value);
     const newAmount = inputValue > 0 ? inputValue : 1;
     setState((prevState) => ({
@@ -87,7 +107,7 @@ const Converter = () => {
     }));
   }, []);
 
-  const handleFromCurrencyChange = useCallback((e) => {
+  const handleFromCurrencyChange = useCallback((e: { target: { value: any; }; }) => {
     const fromCurrency = e.target.value;
     setState((prevState) => ({
       ...prevState,
@@ -95,7 +115,7 @@ const Converter = () => {
     }));
   }, []);
 
-  const handleToCurrencyChange = useCallback((e) => {
+  const handleToCurrencyChange = useCallback((e: { target: { value: any; }; }) => {
     const toCurrency = e.target.value;
     setState((prevState) => ({
       ...prevState,

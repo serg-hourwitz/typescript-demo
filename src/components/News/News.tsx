@@ -1,19 +1,8 @@
 import styles from './News.module.css';
 import LIST from './News.data';
-import React from 'react';
 
-interface ListItem {
-  alt: string;
-  src: string;
-  content: string;
-  id: number;
-}
 
-interface NewsProps {
-  LIST: ListItem[];
-}
-
-const News: React.FC<NewsProps> = () => {
+const News = () => {
   return (
     <div className={styles.news}>
       <h2 className={styles.title}>Product Managers</h2>

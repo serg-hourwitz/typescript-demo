@@ -8,11 +8,11 @@ import React from 'react';
 
 type TProps = {
   disabled?: boolean;
-  color: EColor;
-  text: string;
+  color?: EColor;
+  text?: string;
   type: EButton;
-  href: string;
-  onClick: () => void;
+  href?: string;
+  onClick?: () => void;
 };
 
 enum EColor {
@@ -52,16 +52,14 @@ const Button: React.FC<TProps> = ({
   }
 
   return (
-    <div>
-      <button
-        type={type}
-        onClick={onClick}
-        className={cn(styleList)}
-        disabled={disabled}
-      >
-        <span>{text}</span>
-      </button>
-    </div>
+    <button
+      type={type}
+      onClick={onClick}
+      className={cn(styleList)}
+      disabled={disabled}
+    >
+      <span>{text}</span>
+    </button>
   );
 };
 

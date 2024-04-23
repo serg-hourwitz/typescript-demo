@@ -2,8 +2,6 @@ import styles from './Navigation.module.css';
 import items from './Navigation.data';
 
 
-
-
 const Navigation = () => {
   
   return (

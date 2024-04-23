@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 
 //* State
 import { memo, lazy, Suspense, useCallback, useEffect, useState } from 'react';
+import { EButton } from '../../types/button.types';
 
 const Burger = lazy(() => import('../Burger/Burger'));
 
@@ -24,12 +25,14 @@ const Header = () => {
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    const resizeListener = window.addEventListener('resize', () =>
-      setWidth(window.innerWidth)
-    );
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('resize', resizeListener);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -49,8 +52,8 @@ const Header = () => {
             <Logo />
             <Navigation />
             <div className={styles.block}>
-              <Button text={'Sign In'} onClick={signIn} />
-              <Button text={'Sign Up'} color={'white'} />
+              <Button text={'Sign In'} onClick={signIn} type={EButton.BUTTON} />
+              <Button text={'Sign Up'} color={'white'} type={EButton.BUTTON} />
               <Button
                 target="_blank"
                 href="https://www.instagram.com/"

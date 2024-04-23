@@ -39,21 +39,21 @@ type Props = {
   custom?: number;
 };
 
-const Test = ({ title }: Props) => {
-  const [state, setState] = useState<boolean>(true);
-  return (
-    <div>
-      <h1>{title}</h1>
-    </div>
-  );
-};
-// or this way
-// const Test: React.FC<Props> = ({ title }) => {
+// const Test = ({ title }: Props) => {
+//   const [state, setState] = useState<boolean>(true);
 //   return (
 //     <div>
 //       <h1>{title}</h1>
 //     </div>
 //   );
 // };
+// or this way
+const Test: React.FC<Props> = ({ title }) => {
+  return (
+    <div>
+      <h1>{title}</h1>
+    </div>
+  );
+};
 
 export default Test;

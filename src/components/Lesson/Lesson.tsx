@@ -15,7 +15,10 @@ const Lesson = () => {
     <div>
       <h1 className={styles.text}>Value: {value}</h1>
 
-      <input type="text" onInput={(e) => setValue(e.target.value)} />
+      <input
+        type="text"
+        onInput={(e) => setValue((e.target as HTMLInputElement).value)}
+      />
       <button type="button" onClick={() => setValue('Default value')}>
         <span>TO DEFAULT</span>
       </button>
@@ -42,7 +45,7 @@ const Lesson = () => {
       <Icon icon="facebook" />
       <Icon icon="building" />
       <Icon icon="megaphone" />
-      <Test />
+      <Test title="Hi!" />
       <Converter />
       <Dates />
     </div>

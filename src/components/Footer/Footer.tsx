@@ -1,9 +1,10 @@
 import styles from './Footer.module.css';
 import Links from '../Links/Links';
 import Wrapper from '../Wrapper/Wrapper';
+import React from 'react';
 
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <Wrapper>

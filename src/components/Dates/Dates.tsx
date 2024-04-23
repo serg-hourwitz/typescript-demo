@@ -1,4 +1,5 @@
 // * Base
+import React from 'react';
 import { memo, useCallback, useEffect, useId, useState } from 'react';
 import axios from 'axios';
 
@@ -7,6 +8,7 @@ import Button from '../Button/Button';
 
 // * Styles
 import styles from './Dates.module.css';
+import { EButton } from '../../types/button.types';
 
 // * Local
 const DEFAULT_STATE = { list: [], error: '', loading: true };
@@ -47,7 +49,7 @@ const Dates = () => {
         ) : state.error ? (
           <>
             <p>{state.error}</p>;
-            <Button text="TRY AGAIN" onClick={getList} />
+              <Button text="TRY AGAIN" onClick={getList} type={EButton.BUTTON } />
           </>
         ) : (
           state.list.map(({ txt, rate, cc, r030, exchangedate }) => (
@@ -64,7 +66,13 @@ const Dates = () => {
   );
 };
 
-const Item = ({ currency, rate, exchangeDate }) => {
+type TItemProps = {
+  currency: string;
+  rate: string;
+  exchangeDate: string;
+};
+
+const Item: React.FC<TItemProps> = ({ currency, rate, exchangeDate }) => {
   return (
     <li className={styles.item}>
       <h4>

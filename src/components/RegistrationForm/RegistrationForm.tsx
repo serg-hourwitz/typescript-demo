@@ -1,5 +1,5 @@
 // * Base
-import { Formik } from 'formik';
+import { Formik, FormikValues } from 'formik';
 import Field from '../Field/Field';
 
 // * Components
@@ -11,18 +11,34 @@ import Checkbox from '../Checkbox/Checkbox';
 
 // * Styles
 import styles from './RegistrationForm.module.css';
+import { EButton } from '../../types/button.types';
+
+// * Local styles
+
+type TValues = {
+  email: string;
+  password: string;
+  username: string;
+  phone: string;
+  radio: string;
+  checkbox: string;
+  select: string;
+};
 
 // * Local constants
-const INITIAL_VALUES = {
+const INITIAL_VALUES: TValues = {
   email: '',
   password: '',
   username: '',
   phone: '+380',
+  radio: '',
+  checkbox: '',
+  select: '',
 };
 
 const RegistrationForm = () => {
-  const validators = ({ email, username, password }) => {
-    const errors = {};
+  const validators = ({ email, username, password }: Readonly<TValues>) => {
+    const errors: Partial<TValues> = {};
 
     if (!email) {
       errors.email = 'Email required';
@@ -45,7 +61,7 @@ const RegistrationForm = () => {
     return errors;
   };
 
-  const onSubmit = (values, { setSubmitting }) => {
+  const onSubmit = (values: TValues, { setSubmitting }:FormikValues) => {
     console.log('values: ', values);
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
@@ -124,6 +140,7 @@ const RegistrationForm = () => {
                 name="radio"
                 onChange={handleChange}
                 onBlur={handleBlur}
+                defaultChecked={false}
               />
             </div>
             <div className={styles.checkbox}>
@@ -149,7 +166,11 @@ const RegistrationForm = () => {
               onChange={handleChange}
               onBlur={handleBlur}
             />
-            <Button type="submit" text="Submit" disabled={isSubmitting} />
+            <Button
+              type={EButton.SUBMIT}
+              text="Submit"
+              disabled={isSubmitting}
+            />
           </form>
         )}
       </Formik>

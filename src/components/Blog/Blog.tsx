@@ -1,20 +1,8 @@
 import styles from './Blog.module.css';
 import LIST from './Blog.data';
-import React from 'react';
 
-interface ListItem {
-  src: string;
-  alt: string;
-  content: string;
-  id: number;
-  title: string;
-}
 
-interface BlogProps {
-  LIST: ListItem[];
-}
-
-const Blog: React.FC<BlogProps> = () => {
+const Blog = () => {
   return (
     <div className={styles.blog}>
       <h2 className={styles.title}>

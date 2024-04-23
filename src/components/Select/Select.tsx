@@ -1,8 +1,17 @@
 import COUNTRY_LIST from '../helpers/select.data';
-
 import styles from './Select.module.css';
+import React, { ChangeEvent } from 'react';
 
-const Select = ({ title, name, onChange, onBlur, value }) => {
+type TProps = {
+  title: string;
+  name: string;
+  value: string;
+  onChange: (e: ChangeEvent<any>) => void;
+  onBlur: (e: ChangeEvent<any>) => void;
+};
+
+
+const Select: React.FC<TProps> = ({ title, name, onChange, onBlur, value }) => {
   return (
     <label className={styles.label}>
       {title && <div className={styles.title}>{title}</div>}

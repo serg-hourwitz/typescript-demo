@@ -1,18 +1,19 @@
-import ICONS from './Icon.data';
+import ICONS, { TIconType } from './Icon.data';
 import cn from 'classnames';
-
+import React from 'react';
 import styles from './Icon.module.css';
 
 
-const Icon = ({ className = [], icon }) => {
+interface IconProps {
+  className?: string[];
+  icon: TIconType;
+}
+
+const Icon: React.FC<IconProps> = ({ className = [], icon }) => {
   return (
-    <>
-      <p>
-        <svg className={cn([styles.icon, ...className])} viewBox="0 0 32 32">
-          {ICONS[icon]}
-        </svg>
-      </p>
-    </>
+    <svg className={cn([styles.icon, ...className])} viewBox="0 0 32 32">
+      {ICONS[icon]}
+    </svg>
   );
 };
 
