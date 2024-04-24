@@ -13,6 +13,7 @@ import { EButton } from './types/button.types';
 import Header from './components/Header/Header';
 import Lesson from './components/Lesson/Lesson';
 import Dates from './components/Dates/Dates';
+import Main from './pages/Main/Main';
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -50,7 +51,7 @@ function App() {
       <Icon icon='building' />
       <Icon icon='megaphone' />
       <Lesson />
-      <Dates />
+      <Main />
     </>
   );
 }

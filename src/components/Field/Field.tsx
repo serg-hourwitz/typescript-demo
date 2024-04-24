@@ -1,4 +1,3 @@
-import styles from './Field.module.css';
 import React, { ChangeEvent } from 'react';
 
 type TProps = {
@@ -24,10 +23,10 @@ const Field: React.FC<TProps> = ({
 }) => {
   return (
     <>
-      <label className={styles.label}>
-        {title && <div className={styles.title}>{title}</div>}
+      <label className='block'>
+        {title && <div className='mb-5'>{title}</div>}
         <input
-          className={styles.input}
+          className='h-4 pr-1 pl-1'
           type={type}
           name={name}
           onChange={onChange}
@@ -35,7 +34,7 @@ const Field: React.FC<TProps> = ({
           value={value}
           placeholder={placeholder}
         />
-        <div className={styles.error}>{error || ''}</div>
+        <div className='text-red-900 pt-0.5 h-25'>{error || ''}</div>
       </label>
     </>
   );

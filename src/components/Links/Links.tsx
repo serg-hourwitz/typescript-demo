@@ -14,23 +14,27 @@ interface DATA {
 
 const Links: React.FC = () => {
   return (
-    <div className={styles.links}>
-      <div className={styles.block}>
-        <h4>Quick Links</h4>
-        <ul className={styles.list}>
+    <div className="w-0.4 flex justify-between bg-rose-100 rounded-lg">
+      <div className="pl-1 pr-1 pt-2 pb-2">
+        <h4 className="font-bold">Quick Links</h4>
+        <ul className="flex flex-col gap-2">
           {DATA.quick.map(({ title, id }) => (
-            <li className={styles.item} key={id}>
-              <a href="#">{title}</a>
+            <li key={id}>
+              <a className="hover: text-emerald-400" href="#">
+                {title}
+              </a>
             </li>
           ))}
         </ul>
       </div>
-      <div className={styles.block}>
-        <h4>Legal Stuff</h4>
+      <div className="pl-1 pr-1 pt-2 pb-2">
+        <h4 className="font-bold">Legal Stuff</h4>
         <ul className={styles.list}>
           {DATA.legal.map(({ title, id }) => (
-            <li className={styles.item} key={id}>
-              <a href="#">{title}</a>
+            <li key={id}>
+              <a className="hover: text-emerald-400" href="#">
+                {title}
+              </a>
             </li>
           ))}
         </ul>

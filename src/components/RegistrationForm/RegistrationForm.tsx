@@ -87,7 +87,10 @@ const RegistrationForm = () => {
           isSubmitting,
           /* and other goodies */
         }) => (
-          <form onSubmit={handleSubmit} className={styles.form}>
+          <form
+            onSubmit={handleSubmit}
+            className="max-w-px-600 pt-2 pb-2 pl-2 pr-2 m-0 mx-auto border border-solid"
+          >
             <Field
               title="Email"
               type="email"

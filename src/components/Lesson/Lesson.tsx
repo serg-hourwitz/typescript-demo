@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import Time from '../Time/Time';
 import styles from './Lesson.module.css';
-import Dates from '../Dates/Dates';
-import Converter from '../Converter/Converter';
-import Icon from '../Icon/Icon';
 import Test from '../Test/Test';
+import Tailwind from '../Tailwind/Tailwind';
 
 const Lesson = () => {
   const [value, setValue] = useState('Default value');
@@ -42,12 +40,8 @@ const Lesson = () => {
         <span>SUBTRACT 1</span>
       </button>
       <Time />
-      <Icon icon="facebook" />
-      <Icon icon="building" />
-      <Icon icon="megaphone" />
+      <Tailwind />
       <Test title="Hi!" />
-      <Converter />
-      <Dates />
     </div>
   );
 };

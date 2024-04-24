@@ -5,9 +5,9 @@ import Wrapper from '../Wrapper/Wrapper';
 
 const Main = () => {
   return (
-    <div className={styles.main}>
+    <div className='mb-2 bg-slate-300'>
       <Wrapper>
-        <div className={styles.container}>
+        <div className='flex justify-between bg-white'>
           <Blog />
           <News />
         </div>

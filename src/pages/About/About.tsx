@@ -14,7 +14,7 @@ const About = () => {
 
   return (
     <>
-      <h1>router: About us page</h1>;
+      <h1>router: About us page</h1>
     </>
   );
 };

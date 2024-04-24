@@ -10,13 +10,12 @@ type TProps = {
   onBlur: (e: ChangeEvent<any>) => void;
 };
 
-
 const Select: React.FC<TProps> = ({ title, name, onChange, onBlur, value }) => {
   return (
     <label className={styles.label}>
       {title && <div className={styles.title}>{title}</div>}
       <select
-        className={styles.select}
+        className="h-10 border border-solid border-var-black rounded-md pl-4 py-2 text-gray-700 font-medium focus:outline-none hover:bg-gray-100"
         name={name}
         onChange={onChange}
         onBlur={onBlur}

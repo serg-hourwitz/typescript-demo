@@ -3,7 +3,6 @@ import App from './App';
 import { Suspense, lazy } from 'react';
 import Loading from './components/Loading/Loading';
 
-
 // * Element
 // type of component?
 const Element = ({ component }: { component: any }) => {
@@ -15,7 +14,9 @@ const Element = ({ component }: { component: any }) => {
 const Main = lazy(() => import('./pages/Main/Main'));
 const About = lazy(() => import('./pages/About/About'));
 const Error = lazy(() => import('./pages/Error/Error'));
-const Registration = lazy (() => import('./pages/Registration/Registration'));
+const Registration = lazy(() => import('./pages/Registration/Registration'));
+const Rates = lazy(() => import('./pages/Rates/Rates'));
+const Convert = lazy(() => import('./pages/Convert/Convert'));
 
 const router = createBrowserRouter([
   {
@@ -43,8 +44,16 @@ const router = createBrowserRouter([
         element: <Element component={<About />} />,
       },
       {
-        path: '/Registration',
+        path: '/registration',
         element: <Element component={<Registration />} />,
+      },
+      {
+        path: '/rates',
+        element: <Element component={<Rates />} />,
+      },
+      {
+        path: '/convert',
+        element: <Element component={<Convert />} />,
       },
       {
         // Error 404
@@ -56,4 +65,3 @@ const router = createBrowserRouter([
 ]);
 
 export default router;
-

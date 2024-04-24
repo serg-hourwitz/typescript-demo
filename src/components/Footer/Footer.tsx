@@ -6,9 +6,9 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className={styles.footer}>
+    <footer className='pt-2 pb-2 bg-slate-50 mb-10'>
       <Wrapper>
-        <div className={styles.block}>
+        <div className='flex justify-between items-center'>
           <a href="#">
             <img src="/logo.png" alt="logo" />
           </a>
