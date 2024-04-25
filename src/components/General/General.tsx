@@ -1,4 +1,3 @@
-import styles from './Main.module.css';
 import Blog from '../Blog/Blog';
 import News from '../News/News';
 import Wrapper from '../Wrapper/Wrapper';

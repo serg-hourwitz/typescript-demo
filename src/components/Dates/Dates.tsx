@@ -16,7 +16,7 @@ const DEFAULT_STATE = { list: [], error: '', loading: true };
 const ERROR_TEXT = 'List loading error. Try again';
 
 const Dates = () => {
-  const [state, setState] = useState(DEFAULT_STATE);
+  const [state, setState] = useState<typeof DEFAULT_STATE>(DEFAULT_STATE);
 
   const id = useId(); // додаємо до key
   // console.log('id: ', id);

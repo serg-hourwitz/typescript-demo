@@ -17,6 +17,12 @@ const Error = lazy(() => import('./pages/Error/Error'));
 const Registration = lazy(() => import('./pages/Registration/Registration'));
 const Rates = lazy(() => import('./pages/Rates/Rates'));
 const Convert = lazy(() => import('./pages/Convert/Convert'));
+const Training = lazy(() => import('./pages/Training/Training'));
+const Nav = lazy(() => import('./pages/Nav//Nav'));
+const Profiles = lazy(() => import('./pages/Profiles/Profiles'));
+const Users = lazy(() => import('./pages/Users/Users'));
+const List = lazy(() => import('./pages/Users/List/List'));
+const Detail = lazy(() => import('./pages/Users/Detail/Detail'));
 
 const router = createBrowserRouter([
   {
@@ -54,6 +60,32 @@ const router = createBrowserRouter([
       {
         path: '/convert',
         element: <Element component={<Convert />} />,
+      },
+      {
+        path: '/lesson',
+        element: <Element component={<Training />} />,
+      },
+      {
+        path: '/navigation',
+        element: <Element component={<Nav />} />,
+      },
+      {
+        path: '/profiles',
+        element: <Element component={<Profiles />} />,
+      },
+      {
+        path: '/todo',
+        element: <Element component={<Users />} />,
+        children: [
+          {
+            path: '',
+            element: <Element component={<List />} />,
+          },
+          {
+            path: ':id',
+            element: <Element component={<Detail />} />,
+          },
+        ],
       },
       {
         // Error 404

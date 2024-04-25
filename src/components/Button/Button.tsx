@@ -13,9 +13,10 @@ type TProps = {
   type: EButton;
   href?: string;
   onClick?: () => void;
+  target?: string;
 };
 
-enum EColor {
+export enum EColor {
   DEFAULT = 'default',
   WHITE = 'white',
   RED = 'red',
@@ -47,7 +48,12 @@ const Button: React.FC<TProps> = ({
 
   if (href) {
     return (
-      <Link text={text} href={href} onClick={onClick} styleList={styleList} />
+      <Link
+        text={text}
+        href={href}
+        onClick={() => onClick && onClick()}
+        styleList={styleList}
+      />
     );
   }
 

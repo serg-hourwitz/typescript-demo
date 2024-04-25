@@ -1,11 +1,10 @@
 import styles from './Banner.module.css';
-import baseStyles from '../../styles/base.module.css';
 import React from 'react';
 
 const Banner = () => {
   return (
     <div className={styles.banner}>
-      <div className={baseStyles.wrapper}>
+      <div className='wrapper'>
         <div className={styles.block}>
           <Image className={styles.img} src="/public/image1.svg" alt="guy" />
           <Image className={styles.img} src="/public/image.svg" alt="guy" />

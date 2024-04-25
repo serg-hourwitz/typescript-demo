@@ -1,47 +1,12 @@
-:root {
-  /* Colors */
-  --c-white: #fff;
-  --c-black: #000;
-  --c-red: #d80d0d;
-  --c-blond: #F1F2AE;
-  --c-iron: #D9D9D9;
-  --c-eggshell: #E7EFD6;
-  --c-cosmos: #F9D7D7;
-  --c-periwinkle: #BDCDF6;
+/*  Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  /* Fonts */
-  --f-primary: 'Inter', sans-serif;
-  --fs-primary: 16px;
-
+.wrapper {
+  @apply px-2 max-w-[1200px] m-auto;
 }
 
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  height: 3000px;
-  max-width: 1210px;
-  background-color: #fff;
-  margin: 0 auto;
-  min-height: 100vh;
-  font-family: var(--f-primary);
-  font-size: var(--fs-primary);
-  color: var(--c-black);
-}
-
-img {
-  width: 100%;
-}
-
-a {
-  display: flex;
-  text-decoration: none;
-}
-
-input, select {
-  width: 100%;
+.link {
+  @apply hover:text-orange-400 transition-colors duration-200;
 }
