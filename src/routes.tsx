@@ -74,7 +74,7 @@ const router = createBrowserRouter([
         element: <Element component={<Profiles />} />,
       },
       {
-        path: '/todo',
+        path: '/users',
         element: <Element component={<Users />} />,
         children: [
           {

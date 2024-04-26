@@ -10,3 +10,11 @@
 .link {
   @apply hover:text-orange-400 transition-colors duration-200;
 }
+
+.li {
+  @apply flex justify-between border-b-2 scroll-py-1;
+}
+
+.bold {
+  @apply font-semibold;
+}

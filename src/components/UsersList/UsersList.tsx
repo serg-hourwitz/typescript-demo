@@ -6,7 +6,7 @@ import { memo, useCallback, useEffect, useState } from 'react';
 import { TUsers } from '../../types/users.types';
 import { Link } from 'react-router-dom';
 
-const URL = 'https://jsonplaceholder.typicode.com/todos?_limit=20';
+const URL = 'https://jsonplaceholder.typicode.com/users';
 
 const UsersList = memo(() => {
   const [list, setList] = useState<TUsers[]>([]);
@@ -22,24 +22,22 @@ const UsersList = memo(() => {
   }, [getUsersList]);
 
   return (
-    <>
-      <h1 className='font-bold'>User list</h1>
+    <div className="text-left">
+      <h1 className="font-bold  mb-4">User list</h1>
       <ul className="wrapper">
         {list.map((item) => (
           <Item {...item} key={`Users list ${item.id}`} />
         ))}
       </ul>
-    </>
+    </div>
   );
 });
 
-const Item = memo(({ title, completed, id }: TUsers) => (
+const Item = memo(({ name, id }: TUsers) => (
   <li className="border-b-2 py-2 flex justify-between">
-    <Link to={`/todo/${id}`} className="link">
-      {title}
+    <Link to={`/users/${id}`} className="link">
+      <h2>{name}</h2>
     </Link>
-    {/* <span>{title}</span> */}
-    <span>{completed ? 'YES' : 'NO'}</span>
   </li>
 ));
 
