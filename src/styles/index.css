@@ -3,6 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base */
 .wrapper {
   @apply px-2 max-w-[1200px] m-auto;
 }

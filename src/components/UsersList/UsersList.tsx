@@ -36,7 +36,7 @@ const UsersList = memo(() => {
 const Item = memo(({ name, id }: TUsers) => (
   <li className="border-b-2 py-2 flex justify-between">
     <Link to={`/users/${id}`} className="link">
-      <h2>{name}</h2>
+      <p>{name}</p>
     </Link>
   </li>
 ));

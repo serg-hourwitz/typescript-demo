@@ -24,7 +24,7 @@ const Nav = () => {
       <Link to="/profiles" className="link">
         Profiles
       </Link>
-      <Link to="/todo" className="link">
+      <Link to="/users" className="link">
         Users
       </Link>
       {/* navigation to another URL */}
