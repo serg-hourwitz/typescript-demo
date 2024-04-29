@@ -32,9 +32,9 @@ const Nav = memo(() => {
         {/* Lesson */}
         {t('Lesson')}
       </Link>
-      <Link to="/profiles" className="link">
+      <Link to="/search" className="link">
         {/* Profiles */}
-        {t('Profiles')}
+        {t('Search')}
       </Link>
       <Link to="/users" className="link">
         {/* Users */}

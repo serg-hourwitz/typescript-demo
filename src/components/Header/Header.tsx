@@ -50,7 +50,7 @@ const Header = () => {
           <div className="flex justify-between items-center">
             <Logo />
             <Navigation />
-            <div className="flex gap-2">
+            <div className="flex gap-2 items-center">
               <Button text={'Sign In'} onClick={signIn} type={EButton.BUTTON} />
               <Button
                 text={'Sign Up'}
