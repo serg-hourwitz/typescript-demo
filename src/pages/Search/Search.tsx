@@ -1,7 +1,10 @@
+// * Base
 import useTitle from '../../components/hooks/use-title.hook';
 import { useEffect, useState, memo, FC } from 'react';
 import axios from 'axios';
 
+
+// *Types
 type FactData = {
   createdAt: string;
   shortFact: string;
@@ -9,7 +12,6 @@ type FactData = {
   country: string;
   id: string;
 };
-
 
 const Search: FC = memo(() => {
   const pageTitle: string = useTitle({ title: 'Search' });
@@ -39,7 +41,7 @@ const Search: FC = memo(() => {
     });
     setFilteredResults(filteredData);
   }, [factsData, searchInput]);
-  
+
   return (
     <div>
       <h1 className="text-start text-xl font-bold">{pageTitle}</h1>
@@ -63,14 +65,15 @@ const Search: FC = memo(() => {
           </label>
         </div>
       </header>
+
       <main>
         {isloading ? (
-          <p className="message">Loading...</p>
+          <p>Loading...</p>
         ) : filteredResults.length === 0 ? (
           <p className="text-red-600 font-bold">No matching results found.</p>
         ) : (
           <section className="grid grid-cols-3 gap-2 ml-4 mr-8">
-            {filteredResults.length === 0
+            {filteredResults.length !== 0
               ? factsData.map((data) => (
                   <article
                     className="border border-gray-300 rounded-lg p-2 md:p-4 shadow-md relative"
@@ -82,7 +85,7 @@ const Search: FC = memo(() => {
                       {data.country}
                     </p>
                     <p className="text-right absolute bottom-0 right-2">
-                      {data.createdAt}
+                      {data.createdAt.slice(0,10)}
                     </p>
                   </article>
                 ))
@@ -97,7 +100,7 @@ const Search: FC = memo(() => {
                       {data.country}
                     </p>
                     <p className="text-right absolute bottom-0 right-2">
-                      {data.createdAt}
+                      {data.createdAt.slice(0,10)}
                     </p>
                   </article>
                 ))}

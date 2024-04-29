@@ -19,7 +19,7 @@ const Rates = lazy(() => import('./pages/Rates/Rates'));
 const Convert = lazy(() => import('./pages/Convert/Convert'));
 const Training = lazy(() => import('./pages/Training/Training'));
 const Nav = lazy(() => import('./pages/Nav//Nav'));
-const Search = lazy(() => import('./pages/Profiles/Search'));
+const Search = lazy(() => import('./pages/Search/Search'));
 const Users = lazy(() => import('./pages/Users/Users'));
 const List = lazy(() => import('./pages/Users/List/List'));
 const Detail = lazy(() => import('./pages/Users/Detail/Detail'));
