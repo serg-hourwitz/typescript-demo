@@ -3,11 +3,12 @@ import { useEffect, useState, memo, FC } from 'react';
 import axios from 'axios';
 
 type FactData = {
+  createdAt: string;
   shortFact: string;
   longFact: string;
   country: string;
   id: string;
-}
+};
 
 
 const Search: FC = memo(() => {
@@ -72,7 +73,7 @@ const Search: FC = memo(() => {
             {filteredResults.length === 0
               ? factsData.map((data) => (
                   <article
-                    className="border border-gray-300 rounded-lg p-2 md:p-4 shadow-md"
+                    className="border border-gray-300 rounded-lg p-2 md:p-4 shadow-md relative"
                     key={data.id}
                   >
                     <h3>{data.shortFact}</h3>
@@ -80,17 +81,23 @@ const Search: FC = memo(() => {
                     <p className="border border-gray-300 rounded-lg max-w-max p-2">
                       {data.country}
                     </p>
+                    <p className="text-right absolute bottom-0 right-2">
+                      {data.createdAt}
+                    </p>
                   </article>
                 ))
               : filteredResults.map((data) => (
                   <article
-                    className="border border-gray-300 rounded-lg p-2 md:p-4 shadow-md"
+                    className="border border-gray-300 rounded-lg p-2 md:p-4 shadow-md relative"
                     key={data.id}
                   >
                     <h3>{data.shortFact}</h3>
                     <p>{data.longFact}</p>
                     <p className="border border-gray-300 rounded-lg max-w-max p-2">
                       {data.country}
+                    </p>
+                    <p className="text-right absolute bottom-0 right-2">
+                      {data.createdAt}
                     </p>
                   </article>
                 ))}
