@@ -9,7 +9,7 @@
 }
 
 .link {
-  @apply hover:text-orange-400 transition-colors duration-200;
+  @apply hover:text-orange-400 transition-colors duration-200 cursor-pointer;
 }
 
 .li {
