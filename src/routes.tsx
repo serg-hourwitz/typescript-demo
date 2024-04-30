@@ -58,7 +58,7 @@ const router = createBrowserRouter([
         element: <Element component={<Rates />} />,
       },
       {
-        path: '/convert',
+        path: '/converter',
         element: <Element component={<Convert />} />,
       },
       {

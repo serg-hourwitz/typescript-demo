@@ -2,7 +2,13 @@
   "users": "Użytkownicy",
   "language.ua": "Ukrainski",
   "language.en": "Angelski",
-  "language.pl": "Polski"
+  "language.pl": "Polski",
 
-  
+  "Main": "Główna",
+  "About": "O nas",
+  "Registration": "Rejestracja",
+  "Currency rates": "Kursy walut",
+  "Currency converter": "Przelicznik walut",
+  "Lesson": "Lekcja",
+  "Search": "Szukaj"
 }

@@ -73,7 +73,7 @@ const Search: FC = memo(() => {
           <p className="text-red-600 font-bold">No matching results found.</p>
         ) : (
           <section className="grid grid-cols-3 gap-2 ml-4 mr-8">
-            {filteredResults.length !== 0
+            {filteredResults.length === 0
               ? factsData.map((data) => (
                   <article
                     className="border border-gray-300 rounded-lg p-2 md:p-4 shadow-md relative"
